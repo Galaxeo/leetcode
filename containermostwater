@@ -1,4 +1,3 @@
-height = [1,8,6,2,5,4,8,3,7]
 """
 One might think of doing something like this from the beginning:
 
@@ -20,13 +19,15 @@ factor and we can increment the right side. We do this over and over until we fi
 
 This way, our time complexity remains O(n), because we only have to look through each height once.
 """
-i = 0
-j = len(height)-1 
-area = 0
-while i < j:
-    area = max(min(height[i], height[j]) * (j-i), area)
-    if height[i] > height[j]:
-        j -= 1
-    else:
-        i += 1
-print(area)
+class Solution:
+    def maxArea(self, height: List[int]) -> int:
+        i = 0
+        j = len(height)-1 
+        area = 0
+        while i < j:
+            area = max(min(height[i], height[j]) * (j-i), area)
+            if height[i] > height[j]:
+                j -= 1
+            else:
+                i += 1
+        return area
