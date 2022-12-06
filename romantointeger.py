@@ -37,9 +37,11 @@ while i <= len(s):
                 i += 1
     sm += num
     i += 1
-print("Solution 1:", sm)
+print(sm)
+
 # Solution 2 (replace)
 # I'm utilizing the same dictionary from solution 1 (romandict)
+
 replacechar = {
         'IV' : 'IIII',
         'IX' : 'VIIII',
@@ -53,4 +55,4 @@ for key, value in replacechar.items():
     s = s.replace(key, value)
 for char in s:
     sol2 += romandict[char]
-print("Solution 2:", sol2)
+print(sol2)
